@@ -8,23 +8,24 @@ function getComputerChoice(variables){
 
 getComputerChoice(variables);
 
-function playRound(playerSelection, computerSelection){
-  if(computerSelection == "Paper" && playerSelection == "Rock"){
-    return "You Lose! Paper beats Rock";
+function gameChoice(playerSelection, computerSelection) {
+  if(computerSelection == playerSelection){
+    console.log("Tie");
+  } else if(playerSelection == "Rock" && computerSelection == "Scissors" || playerSelection == "Paper" && computerSelection == "Rock" || playerSelection == "Scissors" && computerSelection == "Paper"){
+    console.log("Player Win");
+  } else {
+    console.log("Computer Win");
+  }
+}
 
-  } else if(computerSelection == "Paper" && playerSelection == "Paper"){
-    return "You tied! You chose Paper";
+function playRound(playerSelection, computerSelection) {
+  const resultRound = gameChoice(playerSelection, computerSelection);
 
-  } else if(computerSelection == "Paper" && playerSelection == "Scissors"){
-    return "You win! Scissors beats Rock"
-
-  } else if(computerSelection == "Paper" && playerSelection == "Rock"){
-    return "You Lose! Paper beats Rock";
-
-  } else if(computerSelection == "Paper" && playerSelection == "Paper"){
-    return "You tied! You chose Paper";
-    
-  } else if(computerSelection == "Paper" && playerSelection == "Scissors"){
-    return "You win! Scissors beats Rock"
-  } else if 
+  if(resultRound == "Tie"){
+    console.log("It's a tie! :O");
+  } else if(resultRound == "Player Win"){
+    console.log("You win! :)");
+  } else {
+    console.log("You lose.. :(");
+  }
 }
