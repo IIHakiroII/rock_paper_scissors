@@ -1,31 +1,40 @@
-const variables = ["Rock", "Paper", "Scissors"];
+const variables = ["rock", "paper", "scissors"];
 
 function getComputerChoice(variables){
-  const randomChoice = variables[Math.floor(Math.random() * variables.length)];
+  let randomChoice = variables[Math.floor(Math.random() * variables.length)];
 
-  console.log(randomChoice);
+  return randomChoice;
 }
 
 getComputerChoice(variables);
 
-function gameChoice(playerSelection, computerSelection) {
+function gameChoice(playerSelection, computerSelection){
   if(computerSelection == playerSelection){
-    console.log("Tie");
-  } else if(playerSelection == "Rock" && computerSelection == "Scissors" || playerSelection == "Paper" && computerSelection == "Rock" || playerSelection == "Scissors" && computerSelection == "Paper"){
-    console.log("Player Win");
+    return "tie";
+  } else if(playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "paper"){
+    return "player win";
   } else {
-    console.log("Computer Win");
+    return "computer win";
   }
 }
 
-function playRound(playerSelection, computerSelection) {
-  const resultRound = gameChoice(playerSelection, computerSelection);
+function playRound(playerSelection, computerSelection){
+  const result = gameChoice(playerSelection, computerSelection);
 
-  if(resultRound == "Tie"){
-    console.log("It's a tie! :O");
-  } else if(resultRound == "Player Win"){
-    console.log("You win! :)");
-  } else {
-    console.log("You lose.. :(");
+  if(result == "tie"){
+    return `It's a tie, ${playerSelection} is equal to ${computerSelection}`;
+  } else if(result == "player win"){
+    return `You win, ${playerSelection} beats ${computerSelection}`;
+  } else if(result == "computer win"){
+    return `You lose, ${computerSelection} beats ${playerSelection}`;
   }
+}
+
+const playerSelection = prompt("Rock, paper or scissor".toLowerCase());
+
+const computerSelection = getComputerChoice(variables);
+console.log(playRound(playerSelection, computerSelection));
+
+function playGame(){
+
 }
