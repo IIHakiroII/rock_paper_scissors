@@ -30,11 +30,11 @@ function playRound(playerSelection, computerSelection){
   }
 }
 
-const playerSelection = prompt("Rock, paper or scissor".toLowerCase());
+const playerSelection = prompt("Rock, paper or scissors");
 
 const computerSelection = getComputerChoice(variables);
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound(playerSelection.toLowerCase(), computerSelection));
 
 function playGame(){
-
+  playRound(playerSelection, computerSelection);
 }
