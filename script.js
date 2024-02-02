@@ -48,7 +48,7 @@ function playGame() {
   if (playerScore > computerScore) {
     console.log(`Congratulations, you got ${playerScore} and the computer got ${computerScore}`);
   } else if (playerScore < computerScore) {
-    console.log(`Game Over, you got ${playerScore} and the computer got ${computerScore}`);
+    console.log(`Game Over, you got ${playerScore} points, and the computer got ${computerScore} points`);
   } else {
     console.log(`It's a tie, you got ${playerScore} and the computer got ${computerScore}`);
   }
